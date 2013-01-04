@@ -361,8 +361,10 @@ date_default_timezone_set($config['timezone']);
 // Email address for sending
 if (!empty($config['adminEmail']))
 	$config['bulkEmail'] = $config['adminEmail'];
-else
+else if(isset($_SERVER['HTTP_HOST']))
 	$config['bulkEmail'] = 'contact@' . preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']);
+else
+	$config['bulkEmail'] = 'contact@localhost';
 
 // At this stage, all user-entered data should be avaliable. Populate response data:
 foreach ($returnKeys as $key) {
