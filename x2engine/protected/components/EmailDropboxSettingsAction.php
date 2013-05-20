@@ -37,7 +37,8 @@
 /* @edition:pro */ 
 
 /**
- * Settings page for the email dropbox settings. 
+ * Settings page for the email dropbox settings.
+ * @package X2CRM.components
  */
 class EmailDropboxSettingsAction extends CAction {
 	
